@@ -12,7 +12,7 @@ let doubleNum = numbers.forEach(double);
 ```
 ![](./img/main.png)
 
-
+  
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function double(num) {
@@ -37,14 +37,14 @@ function double(num) {
 let doubleNumbers = numbers.map(double);
 ```
 
-```js
+``/`js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function addTwo(num) {
   return num + 2;
 }
 let doubleNumbers = numbers.map(addTwo);
 ```
-
+ 
 ```js
 let numbers = [100, 200, 33, 45, 65, 76, 51];
 function addTwo(num) {
