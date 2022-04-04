@@ -16,17 +16,60 @@ let persons = [
 // NOTE: Use reduce method whereever you can to solve this exercise:
 
 // Find the average grade
-
+function aveGrades(person){
+return(avg=persons.reduce((acc,cv)=>{
+    acc=acc+cv;
+    return acc;
+  },0)/person.length);
+}
 // Find the average grade of male
+function getAverageMale(sex) {
 
+  for (let M in sex) {
+      let grade = sex[M];
+      let avg = persons.reduce((acc,curVal) => {
+         return acc + curVal / (persons[grade.sex]=='M').length;
+  
+      }, 0)
+    }
+  }
 // Find the average grade of female
+function getAverageMale(sex) {
 
+  for (let F in sex) {
+      let grade = sex[F];
+      let avg = persons.reduce((acc,curVal) => {
+         return acc + curVal / (persons[grade.sex]=='F').length;
+  
+      }, 0)
+    }
+  }
 // Find the highest grade
+ 
+let max = persons.reduce((acc, person) => {
+  if(acc === null || person.grade > acc) 
+      return person.grade
+  return acc
+}, null)
 
+console.log(max); 
 // Find the highest grade in male
+let highestM = persons.reduce((acc, person) => {
+  if(acc === null || person[grade.sex=='M'] > acc) 
+      return person[grade.sex=='M']
+  return acc
+}, null)
+
+console.log(highestM.sex=='M'); 
 
 // Find the highest grade in female
+let highestF = persons.reduce((acc, person) => {
+  if(acc === null || person[grade.sex=='F'] > acc) 
+      return person[grade.sex=='F']
+  return acc
+}, null)
 
+console.log(highestF.sex=='F'); 
 // Find the highest grade for people whose name starts with 'J' or 'P'
 
 const fruitBasket = [
@@ -51,7 +94,11 @@ that fruit has appeared in the array. Store it in new variable fruitsObj
 Output: 
 {banana: 2, cherry: 3, orange: 3, apple: 2, fig: 1}
 */
+let fruitObj=fruits.reduce((acc,curFruit)=>{
+  return {...acc, [curFruit]: (acc[curFruit] || 0) + 1 }
 
+},0)
+console.log(fruitObj);
 /* 
 
 Use the fruitBasket array to create an array of array. Each array will contain two values name of fruit and number of times
@@ -70,6 +117,10 @@ const data = [
 ];
 
 // Using reduce flat data array
+let flatOne = data.reduce((acc, curVal) => {
+  return acc.concat(curVal)
+},0);
+
 
 const dataTwo = [
   [1, 2, 3],
@@ -79,6 +130,9 @@ const dataTwo = [
 ];
 
 // Using reduce flat dataTwo array
+let flatTwo = data.reduce((acc, curVal) => {
+  return acc.concat(curVal)
+},0);
 
 /*
 
@@ -89,6 +143,12 @@ Create these functions which accepts a number value and returns a number value:
   - `triple` triples the input 
   - `half` converts the value to half and return the integer value not decimal (use Math.round(21.5) => 21)
 */
+function increment(input) { return input + 1;}
+function decrement(input) { return input - 1; }
+function double(input) { return input * 2; }
+function triple(input) { return input * 3; }
+function half(input) { return input / 2; }
+
 
 let pipeline = [
   increment,
@@ -114,6 +174,10 @@ EXAMPLE:
 
   ...
 */
+let result1 = pipeline.reduce(function(total, func) {
+  return func(total);
+}, 3);
+console.log(result);
 
 let pipeline2 = [
   increment,
@@ -129,4 +193,8 @@ let pipeline2 = [
   triple,
 ];
 
-// Find the output using pipeline2 the initial value if 8
+// Find the output using pipeline2 the initial value if 8.
+let result2 = pipeline.reduce(function(total, func) {
+  return func(total);
+}, 8);
+console.log(result);
