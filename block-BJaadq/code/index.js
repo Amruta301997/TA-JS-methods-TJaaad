@@ -1,24 +1,55 @@
 // NOTE: You can not use reduce methods to solve this exercise
 
-function countAllPeople() {
+function countAllPeople(got) {
   // your code goes here
+    return got.filter(obj => obj.name).length;
+  }
+  
+  console.log(countAllPeople());
+
+
+function peopleByHouses(got,value) {
+  // your code goes here
+  
+    return got.filter((v) => (v === value)).length;
 }
 
-function peopleByHouses() {
-  // your code goes here
-}
 
-function everyone() {
-  // your code goes here
-}
+console.log(getOccurrence(got, Arryns));
+console.log(getOccurrence(got,Baratheons));
+console.log(getOccurrence(got,  Dothrakis));
+console.log(getOccurrence(got,  Greyjoys));
+console.log(getOccurrence(got,  Freys));
+console.log(getOccurrence(got,   Lannisters));
+console.log(getOccurrence(got, Redwyne));
+console.log(getOccurrence(got,Starks));
+console.log(getOccurrence(got,Targaryens));
+console.log(getOccurrence(got,Tullys));
+console.log(getOccurrence(got,Tyrells));
 
-function nameWithS() {
+
+
+function everyone(got) {
   // your code goes here
+  return got.filter(obj => obj.name).length;
+  
 }
+let newArr=console.log(everyone());
+
+function nameWithS(name) {
+  // your code goes here
+return name.includes('S' || 's');
+}
+let result1=got.filter(nameWithS);
+console.log(result1);
 
 function nameWithA() {
   // your code goes here
+  return name.includes('A' || 'a');
 }
+let result2=got.filter(nameWithS);
+console.log(result2);
+
 
 function surnameWithS() {
   // your code goes here
@@ -30,7 +61,13 @@ function surnameWithA() {
 
 function peopleNameOfAllHouses() {
   // your code goes here
-}
+   // your code goes here
+   return got.filter(obj => obj.houses.peolple.name);
+  }
+  
+  console.log(countAllPeople());
+
+
 
 // Testing your result after writing your function
 console.log(countAllPeople());
