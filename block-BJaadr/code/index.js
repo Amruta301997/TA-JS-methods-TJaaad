@@ -2,34 +2,73 @@
 
 function countAllPeople() {
   // your code goes here
+  let totalPeople=0;
+  globalThis.peopleByHouses.forEach(house=>{
+    totalPeople+=house.people.length;
+  });
+  return totalPeople;
 }
 
 function peopleByHouses() {
   // your code goes here
+  let final={};
+  globalThis.houses.forEach(house=>{
+    final[house.name]=house.people.length;
+  });
+  return final;
 }
 
 function everyone() {
   // your code goes here
+  let final=[];
+
+  globalThis.houses.forEach((house)=>{
+    let peopleName=house.people.map(
+      (person)=>person.name
+    );
+    final=final.concat(peopleName);
+  });
 }
 
 function nameWithS() {
   // your code goes here
+  let allpeople=everyone();
+  return allpeople.filter((name)=>
+    name.toLowerCase().includes("s")
+  );
 }
 
 function nameWithA() {
   // your code goes here
+  let allpeople=everyone();
+  return allpeople.filter((name)=>
+    name.toLowerCase().includes("a")
+  );
 }
 
 function surnameWithS() {
   // your code goes here
+  let allpeople=everyone();
+  return allpeople.filter((name)=>
+    name.split(" ")[1].toLowerCase().includes("s")
+  );
 }
 
 function surnameWithA() {
   // your code goes here
+  let allpeople=everyone();
+  return allpeople.filter((name)=>
+    name.split(" ")[1].toLowerCase().includes("a")
+  );
 }
 
 function peopleNameOfAllHouses() {
   // your code goes here
+  let final={}
+  globalThis.houses((house)=>{
+    final[house.name]=house.people.map((p)=>p.name);
+  });
+  return final;
 }
 
 // Testing your result after writing your function
